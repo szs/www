@@ -158,7 +158,7 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= yeoman.dist %>'
             },
-            html: '<%= yeoman.app %>/index.html'
+            html: ['<%= yeoman.app %>/index.html']
         },
         usemin: {
             options: {
@@ -224,7 +224,7 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'img/*.*',
                         'js/*.*',
-                        'personal',
+                        'personal/*',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*'
                     ]
@@ -303,7 +303,7 @@ module.exports = function (grunt) {
         'uglify',
         'modernizr',
         'copy:dist',
-        'rev',
+        // 'rev',
         'usemin'
     ]);
 
