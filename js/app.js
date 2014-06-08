@@ -3,6 +3,7 @@
 // $(document).foundation();
 
 $(function() {
+	
     $('#fullpage').fullpage({});
 
 	$('.responsive').slick({
@@ -43,8 +44,6 @@ $(function() {
 
 	// Super nasty - please figure out why this is set in the first place.
 	$('body').css('overflow-y','scroll');
-
-
 
 });	
 	
