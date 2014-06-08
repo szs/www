@@ -1,91 +1,70 @@
+@import "fonts";
 @import "settings";
-// @import "foundation";
+@import "foundation";
+@import "fullpage";
 
-@font-face {
-    font-family: 'sassoon';
-    src: url('fonts/sassoon_primary-webfont.eot');
-    src: url('fonts/sassoon_primary-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/sassoon_primary-webfont.woff') format('woff'),
-         url('fonts/sassoon_primary-webfont.ttf') format('truetype'),
-         url('fonts/sassoon_primary-webfont.svg#sassoonroman_italic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+// VARIABLES
 
-@font-face {
-    font-family: 'combiNumerals';
-    src: url('fonts/combinumeralsltd-webfont.eot');
-    src: url('fonts/combinumeralsltd-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/combinumeralsltd-webfont.woff') format('woff'),
-         url('fonts/combinumeralsltd-webfont.ttf') format('truetype'),
-         url('fonts/combinumeralsltd-webfont.svg#combinumerals_ltdregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+$header-font : 'hattori'; 
+$paragraph-font : 'sassoon';
 
-@font-face {
-    font-family: 'satellite';
-    src: url('satellite-webfont.eot');
-    src: url('satellite-webfont.eot?#iefix') format('embedded-opentype'),
-         url('satellite-webfont.woff') format('woff'),
-         url('satellite-webfont.ttf') format('truetype'),
-         url('satellite-webfont.svg#satelliteregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+$dark-blue : #3a5c61;
+$light-blue: #79b1be;
+$bg-grey : #efefef;
+$border-grey: #b3b3b3;
+$font-grey : #808080;
+$bg-grey-0: #efefef;
+$bg-grey-15: #e7e7e7;
+$bg-grey-30: #e2e2e2;
 
-}
 
-@font-face {
-    font-family: 'karbidFigures';
-    src: url('karbid-normalfigures-webfont.eot');
-    src: url('karbid-normalfigures-webfont.eot?#iefix') format('embedded-opentype'),
-         url('karbid-normalfigures-webfont.woff') format('woff'),
-         url('karbid-normalfigures-webfont.ttf') format('truetype'),
-         url('karbid-normalfigures-webfont.svg#karbid_normalfiguresregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'karbid';
-    src: url('karbid-normal-webfont.eot');
-    src: url('karbid-normal-webfont.eot?#iefix') format('embedded-opentype'),
-         url('karbid-normal-webfont.woff') format('woff'),
-         url('karbid-normal-webfont.ttf') format('truetype'),
-         url('karbid-normal-webfont.svg#karbid_normalregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
+// GENERAL
 
 body {
-  background-color: #efefef;
-  font-family: 'sassoon';
-  letter-spacing: -1px;
-  color: #666666;
+  background-color: $bg-grey;
+  font-family: $paragraph-font;
+  color: $font-grey;
+  overflow-y: scroll; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $font-grey;
 }
 
 h1 {
-  text-align: center;
-}
-
-h2 {
   font-size: 1rem;
   line-height: 20px;
 }
 
-.section {
-  text-align: center;
+h2 {
+  font-family: $header-font;
 }
+
+h3 {
+  font-size: 1rem;
+  text-align: left;
+  margin-top: 1.2rem;
+}
+
+p {
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+a {
+  color: $font-grey;
+}
+
+a:hover {
+  color: $light-blue;
+}
+
+.detailed-view-container {
+  margin: 2% 10% 2% 5%;
+}
+
 
 .slide {
-  text-align: center;
-}
-
-
-.logo {
-  width: 350px;
   text-align: center;
 }
 
@@ -105,179 +84,130 @@ h2 {
   opacity: 0.1;
 }
 
+.square {
+  border: 6px solid $border-grey;
+}
 
-/**
- * fullPage 1.6.7
- * https://github.com/alvarotrigo/fullPage.js
- * MIT licensed
- *
- * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
- */
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow:hidden;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+// IMAGES
+
+.logo {
+  width: 350px;
+  text-align: center;
 }
-#superContainer {
-    height: 100%;
-    position: relative;
-    
-    /* Touch detection for Windows 8 */
-    -ms-touch-action: none; 
+
+.arrow-intra-right-grey {
+  width: 53px;
 }
-.section {
-    position: relative;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.slide {
+
+
+a.leave {
+  float: right;
+  span {
+    line-height: 32px;
+    padding-left: 15px;
+    font-size: 0.8rem;
+  }
+  > div {
+    width: 30px;
+    height: 30px;
     float: left;
-}
-.slide, .slidesContainer {
-    height: 100%;
-    display: block;
-}
-.slides {
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-.section.table, .slide.table {
-    display: table;
-    width: 100%;
-}
-.tableCell {
-    display: table-cell;
-    vertical-align: middle;
-    width: 100%;
-    height: 100%;
-}
-.slidesContainer {
-    float: left;
-    position: relative;
-}
-.controlArrow {
-    position: absolute;
-    top: 46%;
-    cursor: pointer;
-    width: 0;
-    height: 0;
-    margin-top: -38px;
-}
-.controlArrow{
-    display: none;
-}
-.controlArrow.prev {
-    left: 15px;
-    background-image: url('../img/arrow-left.png');
-    background-size: contain;
+    background-image: url('../img/arrow-leave-grey.png');
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    right: 15px;
-}
-.controlArrow.next {
-    background-image: url('../img/arrow-right.png');
     background-size: contain;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    right: 15px;
+  }
 }
-.scrollable {
-    overflow: scroll;
+
+a.leave:hover {
+  > div {
+    background-image: url('../img/arrow-leave-blue.png');
+  }
 }
-.easing {
-    -webkit-transition: all 0.7s ease-out;
-    -moz-transition: all 0.7s ease-out;
-    -o-transition: all 0.7s ease-out;
-    transition: all 0.7s ease-out;
+
+
+button.slick-prev, 
+button.slick-next {
+  background-color: transparent;
 }
-#fullPage-nav {
-    position: fixed;
-    z-index: 100;
-    margin-top: -32px;
-    top: 50%;
-    opacity: 1;
+
+// .slick-prev:before,
+// .slick-next:before {
+//   color: $border-grey;
+// }
+
+.slick-prev:before, .slick-next:before { 
+  font-family: "slick"; 
+  font-size: 20px; 
+  line-height: 1; 
+  color: $border-grey !important; 
+  opacity: 0.85; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
 }
-#fullPage-nav.right {
-    right: 17px;
+
+
+
+// EXTENSIONS
+// ---------- ---------- ---------- ---------- ---------- ---------- 
+//  ---------- ---------- ---------- ---------- ---------- ---------- ----------
+
+.detailed-view {
+  .row {
+    margin-left: 0;
+  }
+  div.row:nth-child(1), div.row:nth-child(2) {
+    border-bottom: 2px solid $border-grey;
+    padding-bottom: 20px;
+    max-width: 1024px;
+  }
+  div.row:nth-child(3) {
+    padding-top: 30px;
+  }
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.8rem;
+    text-align: left;
+  }
+  h3 {
+    line-height: 120%;
+  }
+  h4 {
+    font-family: 'hattori-italic';
+    font-size: 1.3rem;
+    padding-left: 30px;
+    padding-top: 5px;
+  }
+  p {
+    margin-top: 30px;
+  }
+  .slick-slide > p {
+    margin-left: 30px;
+    margin-right: 30px;
+    // max-width: 400px;
+  }
 }
-#fullPage-nav.left {
-    left: 17px;
+
+
+
+// PAGES
+// ---------- ---------- ---------- ---------- ---------- ---------- 
+//  ---------- ---------- ---------- ---------- ---------- ---------- ----------
+
+
+// ALMOST EXACTLY
+
+#almost-exactly {
+  background-image: url('../img/room-1.png');
+  background-size: cover;
+  @extend .detailed-view;
+  img.carousel-img {
+    padding: 10px;
+  }
 }
-.fullPage-slidesNav {
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    opacity: 1;
-}
-.fullPage-slidesNav.bottom {
-    bottom: 17px;
-}
-.fullPage-slidesNav.top {
-    top: 17px;
-}
-#fullPage-nav ul,
-.fullPage-slidesNav ul {
-  margin: 0;
-  padding: 0;
-}
-#fullPage-nav li,
-.fullPage-slidesNav li {
-    display: block;
-    width: 14px;
-    height: 13px;
-    margin: 7px;
-    position:relative;
-}
-.fullPage-slidesNav li {
-    display: inline-block;
-}
-#fullPage-nav li a,
-.fullPage-slidesNav li a {
-    display: block;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    text-decoration: none;
-}
-#fullPage-nav li .active span,
-.fullPage-slidesNav .active span {
-    background: #333;
-}
-#fullPage-nav span,
-.fullPage-slidesNav span {
-    top: 2px;
-    left: 2px;
-    width: 8px;
-    height: 8px;
-    border: 1px solid #000;
-    background: rgba(0, 0, 0, 0);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1;
-}
-.fullPage-tooltip {
-    position: absolute;
-    color: #fff;
-    font-size: 14px;
-    font-family: arial, helvetica, sans-serif;
-    top: -2px;
-}
-.fullPage-tooltip.right {
-    right: 20px;
-}
-.fullPage-tooltip.left {
-    left: 20px;
-}
+
+
+
+
+
+
