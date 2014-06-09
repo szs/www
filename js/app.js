@@ -6,6 +6,7 @@ $(function() {
 
     $('#fullpage').fullpage({});
 
+    // split up javascript to be page specific
     if ($('#almost-exactly').length) {
 		$('.responsive').slick({
 			autoplay: true,
